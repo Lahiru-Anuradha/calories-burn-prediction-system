@@ -1,15 +1,14 @@
-.container {
+.registeandlogin-container {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  height: 550px;
-  background: linear-gradient(45deg, #b03060, #e4a1ad);
-  background-size: 200% 200%;
+  height: 620px;
+  background: linear-gradient(45deg, #9897ce, #7779df);
+  background-size: 300% 300%;
   animation: gradientAnimation 5s ease infinite;
   border-radius: 10px;
 }
-
 /* Keyframes for the gradient animation */
 @keyframes gradientAnimation {
   0% {

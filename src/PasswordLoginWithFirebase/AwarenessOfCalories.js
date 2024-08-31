@@ -1,7 +1,20 @@
 import React, { useEffect } from 'react';
-import './UnderstandingCalories.css';
+import { signOut } from "firebase/auth";
+import { database } from './FirebaseConfig';
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
+import './AwarenessOfCalories.css';
 
-const UnderstandingCalories = () => {
+const AwarenessOfCaloriesCalories = () => {
+  const history = useNavigate();
+
+  const handleClick = () => {
+    signOut(database).then(val => {
+      console.log(val, "val");
+      history('/');
+    });
+  };
+
   
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +79,7 @@ const UnderstandingCalories = () => {
       <section className="section">
         <h2>Calorie Myths and Facts</h2>
         <p>
-          There’s a lot of misinformation about calories. Here we debunk common myths and set the record straight on how calories really work.
+          There is a lot of misinformation about calories. Here we debunk common myths and set the record straight on how calories really work.
         </p>
       </section>
 
@@ -87,4 +100,4 @@ const UnderstandingCalories = () => {
   );
 };
 
-export default UnderstandingCalories;
+export default AwarenessOfCalories;

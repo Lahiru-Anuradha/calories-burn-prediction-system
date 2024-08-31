@@ -12,7 +12,10 @@ export default function Navbar(){
             </Link>
                 <ul>
                     <CustomLink to="/home">Home</CustomLink>   
-
+                    <CustomLink to="/prediction">Get Prediction</CustomLink>       
+                    <CustomLink to="/awarenessofcalories">Awareness of Calories</CustomLink>
+                    <CustomLink to="/faq">FAQ</CustomLink>
+                    <CustomLink to="/contactus">Contact Us</CustomLink>
                 </ul>
         </nav>
 

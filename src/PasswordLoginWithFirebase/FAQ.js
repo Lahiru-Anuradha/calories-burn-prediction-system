@@ -1,8 +1,23 @@
 import React from 'react';
 import './FAQ.css';
+import { signOut } from "firebase/auth";
+import { database } from './FirebaseConfig';
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
+
 
 const FAQ = () => {
-onst faqs = [
+  const history = useNavigate();
+
+  const handleClick = () => {
+    signOut(database).then(val => {
+      console.log(val, "val");
+      history('/');
+    });
+  };
+
+
+const faqs = [
     {
       question: "How accurate is the calorie burnt prediction?",
       answer: "Our calorie burnt prediction system uses advanced algorithms that consider various factors like workout type, duration, intensity, and personal details such as age and weight. While our system strives for accuracy, the predicted values are estimates and may vary from actual calories burned due to individual metabolic differences."
@@ -37,7 +52,7 @@ onst faqs = [
     },
     {
       question: "How do I provide feedback or suggest a new feature?",
-      answer: "We’d love to hear from you! Please use the Contact Us page to share your feedback or suggest new features. Your input helps us improve our service."
+      answer: "We would love to hear from you! Please use the Contact Us page to share your feedback or suggest new features. Your input helps us improve our service."
     },
     {
       question: "Is there a cost to use the calorie burnt prediction tool?",

@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { signOut } from "firebase/auth";
+import { database } from './FirebaseConfig';
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 import './Prediction.css'; 
 
-function App() {
+function Prediction() {
+    const history = useNavigate();
+
+    const handleClick = () => {
+        signOut(database).then(val => {
+            console.log(val, "val");
+            history('/');
+        });
+    };
+
+
     const [formData, setFormData] = useState({
         Gender: 'male',
         Age: '',
@@ -64,4 +78,4 @@ function App() {
     );
 }
 
-export default App;
+export default Prediction;

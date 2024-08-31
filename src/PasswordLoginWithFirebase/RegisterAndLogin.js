@@ -75,7 +75,7 @@ useEffect(() => {
       signInWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          alert("Login Successful!"); // Alert for successful login
+          alert("Login Successful!"); 
           history("/home");
         })
         .catch((err) => {
@@ -85,7 +85,7 @@ useEffect(() => {
       createUserWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          alert("Registration Successful!"); // Alert for successful registration
+          alert("Registration Successful!"); 
           history("/home");
         })
         .catch((err) => {
@@ -102,7 +102,7 @@ useEffect(() => {
     <div className="registeandlogin-container">
       <h1>Calories Burnt Prediction System</h1>
       <p className="text-center">
-        We provide advanced prediction models to assess the Calories burnt.
+      We provide advanced prediction models to estimate the Calories Burned
       </p>
 
       <div className="buttons-container">
