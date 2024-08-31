@@ -1,0 +1,60 @@
+.calories-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-section p, .conclusion-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.call-to-action a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.call-to-action a:hover {
+  text-decoration: underline;
+}
+
+/* Optional Scroll-triggered Animation */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
