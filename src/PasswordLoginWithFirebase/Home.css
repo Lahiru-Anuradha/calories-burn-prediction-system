@@ -1,0 +1,214 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.home-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw; /* Adjust width to fit your needs */
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Ensure image stays behind content */
+}
+
+.home-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: lubDub 4s infinite; /* Heartbeat animation with fade */
+}
+
+.home-container {
+    flex: 1;
+    margin-left: 50vw; /* Push content to the right of the image */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    animation: fadeIn 1s ease-in-out;
+    overflow-y: auto; /* Allow scrolling for content */
+    position: relative;
+    z-index: 1; /* Ensure content is above image */
+    width: 80vw; /* Set specific width */
+    height: 90vh; /* Set specific height */
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vision-mission {
+    margin-top: 30px;
+}
+
+.vision-mission h2 {
+    font-size: 2rem;
+    color: #bd2dda;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.vision-mission p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    margin: 20px 0;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .home-image-container {
+        width: 100vw;
+        height: 200px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: visible; /* Ensure image visibility */
+    }
+
+    .home-container {
+        margin-left: 0;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .vision-mission h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-content p, .vision-mission p {
+        font-size: 1rem;
+    }
+}
+
+/* Lub Dub Heartbeat Animation */
+@keyframes lubDub {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+    75% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* Testimonials */
+.testimonials {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.testimonials p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+
+.star-rating {
+    color: #f39c12; /* Gold color for stars */
+    font-size: 1.2rem; /* Adjust size as needed */
+    margin-left: 10px; /* Spacing between comment and stars */
+}

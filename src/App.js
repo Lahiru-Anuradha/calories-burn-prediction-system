@@ -1,9 +1,9 @@
 import React from 'react';
 import Home from "./PasswordLoginWithFirebase/Home"
 import Prediction from "./PasswordLoginWithFirebase/Prediction"
+import ContactUs from "./PasswordLoginWithFirebase/ContactUs"
 import AwarenessOfCalories from "./PasswordLoginWithFirebase/AwarenessOfCalories"
 import FAQ from "./PasswordLoginWithFirebase/FAQ"
-import ContactUs from "./PasswordLoginWithFirebase/ContactUs"
 import ChatBot from 'react-simple-chatbot';
 import { Button } from 'semantic-ui-react';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import RegisterAndLogin from "./PasswordLoginWithFirebase/RegisterAndLogin";
 import ForgotPassword from "./PasswordLoginWithFirebase/ForgotPassword";
 import './styles.css';
+
 
 
 function App() {
@@ -133,13 +134,13 @@ function App() {
   
     <div className="Container">
         <Routes>
-            <Route path="/" element={<RegisterAndLogin/>} />
+        <Route path="/" element={<RegisterAndLogin/>} />
             <Route path="/reset" element={<ForgotPassword/>} />
             <Route path="/home" element={<Home />} />  
             <Route path="/prediction" element={<Prediction />} />
             <Route path="/awarenessofcalories" element={<AwarenessOfCalories />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/contactus" element={<ContactUs />} />            
+            <Route path="/contactus" element={<ContactUs />} />           
         </Routes>
     </div>
 

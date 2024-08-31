@@ -1,78 +1,94 @@
 import React from 'react';
-import './FAQ.css';
 import { signOut } from "firebase/auth";
 import { database } from './FirebaseConfig';
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
+import './FAQ.css'; // Ensure the CSS file is named correctly
+
+export default function FAQ() {
+    const history = useNavigate();
+
+    const handleClick = () => {
+        signOut(database).then(val => {
+            console.log(val, "val");
+            history('/');
+        });
+    };
+
+    return (
+        <>
+            <Navbar />
+            <div className="faq-container">
+                <div className="signout-btn-container">
+                    <button className="signout-btn" onClick={handleClick}>Sign Out</button>
+                </div>
+
+                <h1 className="faq-title">Frequently Asked Questions</h1>
+                
+                {/* Custom Continuous Scrolling Carousel */}
+                <div className="carousel-container">
+                    <div className="carousel-inner">
+                        <div className="carousel-item">
+                            <img src="/bgi1.jpeg" alt="Background 1" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="/bgi2.jpeg" alt="Background 2" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="/bgi3.jpeg" alt="Background 3" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="/bgi4.jpeg" alt="Background 4" />
+                        </div>
+                        <div className="carousel-item">
+                            <img src="/bgi5.jpeg" alt="Background 5" />
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div className="faq-section">
+                    <h2 className="faq-question">What is this system about?</h2>
+                    <p className="faq-answer">Our system is designed to predict chronic kidney disease using advanced machine learning algorithms. It helps in analyzing various factors and provides accurate assessments, helping users take proactive measures.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">How does the system ensure accuracy?</h2>
+                    <p className="faq-answer">We use state-of-the-art predictive technologies, which are constantly updated with the latest medical research to ensure the highest accuracy in kidney disease management.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">Is my data secure?</h2>
+                    <p className="faq-answer">Yes, we prioritize user privacy and data security. All information provided is encrypted and handled with the utmost confidentiality.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">Can I provide feedback?</h2>
+                    <p className="faq-answer">Absolutely! We encourage feedback from users and healthcare professionals to improve the accuracy and effectiveness of our prediction models.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">How often is the system updated?</h2>
+                    <p className="faq-answer">Our system is updated regularly to incorporate the latest advancements in medical research and machine learning techniques, ensuring that the predictions remain accurate and relevant.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">What kind of data do I need to provide?</h2>
+                    <p className="faq-answer">You will need to provide basic health information such as age, gender, blood pressure, and other relevant medical details. This data helps the system make accurate predictions about kidney health.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">Is there a cost to use the system?</h2>
+                    <p className="faq-answer">The basic features of our system are available free of charge. However, there may be premium features or additional services that come with a fee. Details will be provided within the app.</p>
+                </div>
+
+                <div className="faq-section">
+                    <h2 className="faq-question">Can I access the system on mobile devices?</h2>
+                    <p className="faq-answer">Yes, our system is designed to be accessible on both desktop and mobile devices, allowing you to monitor your health and access predictions anytime, anywhere.</p>
+                </div>
 
 
-const FAQ = () => {
-  const history = useNavigate();
-
-  const handleClick = () => {
-    signOut(database).then(val => {
-      console.log(val, "val");
-      history('/');
-    });
-  };
-
-
-const faqs = [
-    {
-      question: "How accurate is the calorie burnt prediction?",
-      answer: "Our calorie burnt prediction system uses advanced algorithms that consider various factors like workout type, duration, intensity, and personal details such as age and weight. While our system strives for accuracy, the predicted values are estimates and may vary from actual calories burned due to individual metabolic differences."
-    },
-    {
-      question: "What information do I need to provide for an accurate prediction?",
-      answer: "For the most accurate results, we recommend providing details such as the type of exercise, duration, intensity, age, weight, and gender. The more specific your inputs, the more tailored your prediction will be."
-    },
-    {
-      question: "Can I use the prediction tool for any type of exercise?",
-      answer: "Yes, our prediction tool supports a wide range of exercises, including running, cycling, swimming, weightlifting, yoga, and more. If your specific activity isn’t listed, you can select the closest match or choose a general category like 'Cardio' or 'Strength Training.'"
-    },
-    {
-      question: "Is my personal data safe?",
-      answer: "Absolutely. We take your privacy very seriously. All personal data is encrypted and stored securely. We do not share your information with third parties. For more details, please refer to our Privacy Policy."
-    },
-    {
-      question: "Do I need to create an account to use the prediction tool?",
-      answer: "No, you can use the calorie burnt prediction tool without creating an account. However, creating an account allows you to save your predictions, track your progress over time, and receive personalized tips and recommendations."
-    },
-    {
-      question: "Can I save and track my calorie burn history?",
-      answer: "Yes, if you create an account, you can save your predictions and access your calorie burn history. This feature helps you monitor your fitness progress and make informed adjustments to your routine."
-    },
-    {
-      question: "I received a prediction that seems off. What should I do?",
-      answer: "If a prediction seems inaccurate, please double-check the information you provided. Ensure that the exercise type, duration, and intensity are correctly entered. If the issue persists, feel free to contact our support team at support@calorieburnttracker.com."
-    },
-    {
-      question: "Can I use the prediction tool on my mobile device?",
-      answer: "Yes, our prediction tool is fully responsive and optimized for mobile devices, so you can easily use it on your smartphone or tablet."
-    },
-    {
-      question: "How do I provide feedback or suggest a new feature?",
-      answer: "We would love to hear from you! Please use the Contact Us page to share your feedback or suggest new features. Your input helps us improve our service."
-    },
-    {
-      question: "Is there a cost to use the calorie burnt prediction tool?",
-      answer: "The basic version of our calorie burnt prediction tool is free to use. We also offer premium features and detailed analytics for a small subscription fee. Visit our Pricing page for more information."
-    }
-  ];
-
-  return (
-    <div className="faq-section">
-      <h1>Frequently Asked Questions (FAQ)</h1>
-      <ul>
-        {faqs.map((faq, index) => (
-          <li key={index} className="faq-item">
-            <h2>{faq.question}</h2>
-            <p>{faq.answer}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default FAQ;
+            </div>
+        </>
+    );
+}
