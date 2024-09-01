@@ -50,7 +50,7 @@ function ContactUs() {
       })
     };
 
-    const res = await fetch('https://contact-us-efa3f-default-rtdb.firebaseio.com/Messages.json', option);
+    const res = await fetch('https://contact-us-1ee67-default-rtdb.firebaseio.com/Messages.json', option);
     console.log(res);
 
     if (res.ok) {
