@@ -155,3 +155,18 @@ button.form-button-secondary:hover {
 }
 
 
+/* Ensure that the modal is above other content */
+.cont {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: Add some transition for the modal */
+.modal-overlay {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

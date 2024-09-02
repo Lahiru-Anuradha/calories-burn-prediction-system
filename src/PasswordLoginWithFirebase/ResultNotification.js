@@ -1,15 +1,16 @@
 import React from 'react';
-import './ResultNotification.css'; // Ensure you create this CSS file
+import './ResultNotification.css';  // Ensure styles are applied
 
 const ResultNotification = ({ result, onClose }) => {
-  return (
-    result && (
-      <div className="result-notification">
-        <button className="close-btn" onClick={onClose}>&times;</button>
-        Predicted Calories Burnt: {result}
-      </div>
-    )
-  );
+    return (
+        <div className="result-notification">
+            <div className="result-content">
+                <h2>Calories Burnt prediction : </h2>
+                <p>{result}</p>  {/* Display the result */}
+                <button onClick={onClose}>Close</button>
+            </div>
+        </div>
+    );
 };
 
 export default ResultNotification;

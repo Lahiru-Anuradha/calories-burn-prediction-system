@@ -89,6 +89,11 @@ function ContactUs() {
           </div>
         </div>
       </div>
+
+             <footer>
+                <p>&copy; {new Date().getFullYear()} Calories Burnt Prediction System. All rights reserved.</p>
+            </footer>
+
     </>
   );
 }

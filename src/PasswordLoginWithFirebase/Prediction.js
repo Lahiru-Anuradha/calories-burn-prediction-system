@@ -8,7 +8,7 @@ import './Prediction.css';
 import ResultNotification from './ResultNotification'; 
 
 export default function Prediction() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     Gender: 'male',
     Age: '',
@@ -21,11 +21,14 @@ export default function Prediction() {
 
   const [result, setResult] = useState(null);
 
-  const handleClick = () => {
-    signOut(database).then(val => {
-      console.log(val, "val");
-      history('/');
-    });
+  const handleSignOut = () => {
+    signOut(database)
+      .then(() => {
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error("Sign out error:", error);
+      });
   };
 
   const handleChange = (e) => {
@@ -51,7 +54,7 @@ export default function Prediction() {
       <div className="navbar-fixed">
         <Navbar />
       </div>
-      <button className="sign-out-btn" onClick={handleClick}>Sign Out</button>
+      <button className="sign-out-btn" onClick={handleSignOut}>Sign Out</button>
 
       <div className="cont">
         <div className="prediction-cont">
@@ -71,29 +74,36 @@ export default function Prediction() {
           </select><br />
 
           <label className="form-label">Age:</label>
-          <input className="form-input" type="number" name="Age" value={formData.Age} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Age" value={formData.Age} onChange={handleChange} required /><br />
 
           <label className="form-label">Height (cm):</label>
-          <input className="form-input" type="number" name="Height" value={formData.Height} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Height" value={formData.Height} onChange={handleChange} required /><br />
 
           <label className="form-label">Weight (kg):</label>
-          <input className="form-input" type="number" name="Weight" value={formData.Weight} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Weight" value={formData.Weight} onChange={handleChange} required /><br />
 
           <label className="form-label">Duration (min):</label>
-          <input className="form-input" type="number" name="Duration" value={formData.Duration} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Duration" value={formData.Duration} onChange={handleChange} required /><br />
 
           <label className="form-label">Heart Rate (bpm):</label>
-          <input className="form-input" type="number" name="Heart_Rate" value={formData.Heart_Rate} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Heart_Rate" value={formData.Heart_Rate} onChange={handleChange} required /><br />
 
           <label className="form-label">Body Temp (°C):</label>
-          <input className="form-input" type="number" name="Body_Temp" value={formData.Body_Temp} onChange={handleChange} /><br />
+          <input className="form-input" type="number" name="Body_Temp" value={formData.Body_Temp} onChange={handleChange} required /><br />
 
           <button className="form-button" type="submit">Predict</button>
         </form>
 
-       
-        <ResultNotification result={result} onClose={handleCloseNotification} />
+        {/* Render the ResultNotification modal if result exists */}
+        {result && (
+          <ResultNotification result={result} onClose={handleCloseNotification} />
+        )}
       </div>
+
+            <footer>
+                <p>&copy; {new Date().getFullYear()} Calories Burnt Prediction System. All rights reserved.</p>
+            </footer>
+
     </>
   );
 }

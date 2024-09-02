@@ -39,7 +39,13 @@ function ForgotPassword() {
         <button className="btn-reset">Reset Password</button>
       </form>
     </div>
+
+             <footer>
+                <p>&copy; {new Date().getFullYear()} Calories Burnt Prediction System. All rights reserved.</p>
+            </footer>
     </div>
+
+    
   );
 }
 
