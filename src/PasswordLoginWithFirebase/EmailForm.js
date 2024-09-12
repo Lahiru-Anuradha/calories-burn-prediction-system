@@ -11,7 +11,7 @@ const EmailForm = () => {
     e.preventDefault();
 
     // EmailJS - Created template_id, service_id and publickey which is in the account--> API
-    const serviceId = 'service_8muh6oj';
+    const serviceId = 'service_20sgneb';
     const templateId = 'template_2u795y2';
     const publicKey = 'pkXb0IythIz_ogg64';
 

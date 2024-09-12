@@ -1,13 +1,5 @@
-/* Navbar Fixed Position */
-.navbar-fixed {
-  display: flex;
-  justify-content: space-between; /* Space for sign-out button */
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: calc(100% - 100px); /* Adjust width as needed */
-  z-index: 999;
-}
+
+
 
 /* Sign Out Button */
 .sign-out-btn {
@@ -26,20 +18,22 @@
   background-color: #ff4c4c;
 }
 
+
 /* Prediction Container */
 .prediction-container {
-  background-color: #9dbbf3;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: center; /* Center-align text */
+  padding: 120px 20px 20px; /* Add extra padding at the top to account for the navbar */
+  background-color: #f7f7f7;
+  min-height: 100vh; /* Ensure container covers at least the full viewport height */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
-  animation: fadeIn 0.8s ease;
+  align-items: center; /* Center content horizontally */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Content Styling */
+.content {
+  max-width: 800px;
+  width: 100%;
 }
 
 /* Bullet List */
@@ -102,20 +96,6 @@ button.form-button:hover {
   background-color: #0056b3;
 }
 
-button.form-button-secondary {
-  padding: 10px 20px;
-  background-color: #6c757d;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.form-button-secondary:hover {
-  background-color: #495057;
-}
-
 /* Result Display */
 .result {
   margin-top: 20px;
@@ -154,19 +134,7 @@ button.form-button-secondary:hover {
   }
 }
 
-
 /* Ensure that the modal is above other content */
-.cont {
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: Add some transition for the modal */
 .modal-overlay {
   animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }

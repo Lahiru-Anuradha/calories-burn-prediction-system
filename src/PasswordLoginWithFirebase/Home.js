@@ -44,8 +44,10 @@ function Home() {
 
                         <div className="contact-info">
                             <h2>Contact Us</h2>
-                            <p>Have questions or need support? Reach out to us at <a href="ContactUs">Click Here...!</a>.</p>
+                            <p>Have questions or need support? Reach out us from here...! 
+                            <a href="ContactUs" className="contact-button">Get in Touch</a></p>
                         </div>
+
                     </div>
                 </div>
             </div>

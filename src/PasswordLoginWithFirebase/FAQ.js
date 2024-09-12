@@ -23,7 +23,6 @@ export default function FAQ() {
                     <button className="signout-btn" onClick={handleClick}>Sign Out</button>
                 </div>
 
-                <h1 className="faq-title">Frequently Asked Questions</h1>
                 
                 {/* Custom Continuous Scrolling Carousel */}
                 <div className="carousel-container">
@@ -47,6 +46,7 @@ export default function FAQ() {
                 </div>
 
                 
+                <h1 className="faq-title">Frequently Asked Questions</h1>
                 <div className="faq-section">
                     <h2 className="faq-question">What is this system about?</h2>
                     <p className="faq-answer">Our system is designed to predict chronic kidney disease using advanced machine learning algorithms. It helps in analyzing various factors and provides accurate assessments, helping users take proactive measures.</p>

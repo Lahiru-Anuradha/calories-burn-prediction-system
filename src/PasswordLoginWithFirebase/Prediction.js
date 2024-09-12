@@ -51,9 +51,9 @@ export default function Prediction() {
 
   return (
     <>
-      <div className="navbar-fixed">
+      
         <Navbar />
-      </div>
+  
       <button className="sign-out-btn" onClick={handleSignOut}>Sign Out</button>
 
       <div className="cont">

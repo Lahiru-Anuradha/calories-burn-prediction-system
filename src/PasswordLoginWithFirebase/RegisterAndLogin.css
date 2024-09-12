@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  height: 620px;
+  height: 560px;
   background: linear-gradient(45deg, #9897ce, #7779df);
   background-size: 300% 300%;
   animation: gradientAnimation 5s ease infinite;
